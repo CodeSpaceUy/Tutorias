@@ -10,9 +10,7 @@ class homeController{
     }
 
     public function guardarUsuario($ci,$correo, $name, $surname, $password){
-    /*     echo $correo;
-        echo $this->encriptar($password);
-        die(); */
+   
 
         $valor = $this->MODEL->agregarNuevoUsuario($ci,$this->limpiarCorreo($correo),$name,$surname ,$this->encriptar($this->limpiarCadena($password)));
         return $valor;
