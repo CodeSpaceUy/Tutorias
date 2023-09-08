@@ -9,10 +9,12 @@ class homeController{
 
     }
 
-    public function guardarUsuario($ci,$correo, $name, $surname, $password){
-   
+    public function guardarUsuario($ci,$correo, $name, $surname, $password, $verifiacion){
+    /*     echo $correo;
+        echo $this->encriptar($password);
+        die(); */
 
-        $valor = $this->MODEL->agregarNuevoUsuario($ci,$this->limpiarCorreo($correo),$name,$surname ,$this->encriptar($this->limpiarCadena($password)));
+        $valor = $this->MODEL->agregarNuevoUsuario($ci,$this->limpiarCorreo($correo),$name,$surname ,$this->encriptar($this->limpiarCadena($password)),$verifiacion);
         return $valor;
     }
     public function limpiarCadena($campo){

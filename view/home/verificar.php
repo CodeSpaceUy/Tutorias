@@ -1,21 +1,28 @@
 <?php
+require_once("C:/xampp/htdocs/login/view/head/head.php");
 
-require("c://xampp/htdocs/login/controller/homeController.php");
+if (isset($_POST["ci"]) && isset($_POST["password"])) {
+    $txtUsuario = $_POST["ci"];
+    $txtPassword = $_POST["password"];
 
-session_start();
+    $id_cargo = usuarioDao::login($txtUsuario, $txtPassword);
 
-$obj = new homeController();
-$correo = $obj->limpiarCorreo($_POST["username"]) ;
-$contraseña = $obj->limpiarCadena($_POST["password"]);
-$bandera = $obj->verificarUsuario($correo,$contraseña);
-
-if($bandera){
-
-    $_SESSION["usuario"] = $correo;
-    header("Location:panel_control.php");
-
-}else{
-    $error = "<li>Las claves son incorrectas</li>";
-    header("Location:login.php?error=".$error);
+    if ($id_cargo !== false) {
+        // Las credenciales son correctas, redirige según el id_cargo
+        if ($id_cargo == 1) {
+            // Redirigir para usuario con id_cargo 1
+            header("Location: pagina_usuario1.php");
+            exit;
+        } elseif ($id_cargo == 2) {
+            // Redirigir para usuario con id_cargo 2
+            header("Location: pagina_usuario2.php");
+            exit;
+        }
+    }
 }
+
+echo "No logueado";
+
+
+
 ?>

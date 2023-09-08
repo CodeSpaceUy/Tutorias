@@ -12,3 +12,16 @@ function mostrarContrasenia(idPassword, idIcon){
     }
 
 }
+
+
+
+function abrir(){
+    let barra = document.getElementById("menu_side");
+    if(barra.classList.contains("menu__side") && barra.classList.contains("veri")){
+        barra.classList.replace("veri", "menu__side_move");
+        
+    }else{
+        barra.classList.replace("menu__side_move", "veri");
+    }
+}
+

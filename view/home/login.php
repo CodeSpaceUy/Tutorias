@@ -60,36 +60,22 @@ if(!empty($_SESSION['usuario'])){
 
   <div class="iniciar container">
     <div class="row">
-        <h1 class="text-center">Iniciar Sesion</h1>
+        <h1 class="text-center">Iniciar Sesión</h1>
 
 
         <div class="container py-5">
-    <form action="verificar.php" method="POST" autocomplete="off">
-      <div class="form-group">
-        <label for="username">Nombre de Usuario:</label>
-        <input type="text" class="form-control" id="username" name="username" required>
-      </div>
-      <br>
-      <div class="form-group">
-        <div class="box-eye">
-            <button type="button" onclick="mostrarContrasenia('password', 'eyePassword')">
-                <i id="eyePassword" class="fa-eye">s</i>
-            </button>
+        <form action="verificar.php" method="POST">
+        <div>
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" id="ci" name="ci" required>
         </div>
-        <label for="password">Contraseña:</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-      </div>
-
-      <?php if(!empty($_GET["error"])):?>
-                <div id="alertError" class="alert alert-danger mb-2" role="alert" style="margin=auto;">
-                <?= !empty($_GET["error"]) ? $_GET["error"] : ""?>
-
-                </div>
-            <?php endif;?>
-
-
-      <input type="submit" class="btn btn-primary" name="boton"></input>
-      
+        <div>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+            <input type="submit" name="login" value="Iniciar Sesión">
+        </div>
     </form>
 
   </div>

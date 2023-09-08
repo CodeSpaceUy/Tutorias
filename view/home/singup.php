@@ -43,7 +43,7 @@ if(!empty($_SESSION['usuario'])){
               <a class="nav-link nav-item2" href="#">Contacto</a>
             </li>
             <li class="nav-item nav-item2">
-              <a class="nav-link" href="#">Tutorias</a>
+              <a class="nav-link" href="usuario.php">Tutorias</a>
             </li>
 
           </ul>
@@ -66,7 +66,7 @@ if(!empty($_SESSION['usuario'])){
 
 
 
-  <form action="store.php" class="g-3 needs-validation" novalidate method="POST">
+  <form action="crearUsuario.php" class="g-3 needs-validation" novalidate method="POST">
     <h1 class="text-center">Registrese</h1>
     <div class="container">
         <div class="row">
@@ -74,7 +74,7 @@ if(!empty($_SESSION['usuario'])){
 
             <div class="col-md-4">
                 <label for="validationCustom01" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="validationCustom01" name="nombre" required>
+                <input type="text" class="form-control" id="name" name="name" required>
                 <div class="valid-feedback">
                     Ok!
                 </div>
@@ -82,7 +82,7 @@ if(!empty($_SESSION['usuario'])){
 
             <div class="col-md-4">
                 <label for="validationCustom02" class="form-label">Apellido</label>
-                <input type="text" class="form-control" id="validationCustom02" name="apellido" required>
+                <input type="text" class="form-control" id="surname" name="surname" required>
                 <div class="valid-feedback">
                     Ok!
                 </div>
@@ -91,7 +91,7 @@ if(!empty($_SESSION['usuario'])){
              <div class="col-md-4">
                 <label for="validationCustomUsername" class="form-label">Cedula de Identidad</label>
                 <div class="input-group has-validation">
-                <input type="text" class="form-control" id="validationCustomUsername" name="cedula" aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" id="ci" name="ci" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                      Por favor ingrese su CI.
                 </div>
@@ -116,7 +116,7 @@ if(!empty($_SESSION['usuario'])){
                         </button>
                     </div>
                     <label for="validationCustom06" class="form-label">Contraseña</label>
-                    <input type="password" id="password" class="form-control" name="contra" value="<?= (!empty($_GET["contraseña"])) ? $_GET["contraseña"] : "" ?>">
+                    <input type="password" id="contra" class="form-control" name="contra" value="<?= (!empty($_GET["contraseña"])) ? $_GET["contraseña"] : "" ?>">
 
             </div>
 
@@ -128,7 +128,7 @@ if(!empty($_SESSION['usuario'])){
                     </div>
                     <label for="validationCustom06" class="form-label">Verificar Contraseña</label>
 
-                    <input type="password" id="password2" class="form-control" name="contraDos" value="<?= (!empty($_GET["confirmarContraseña"])) ? $_GET["confirmarContraseña"] : "" ?>"  >
+                    <input type="password" id="contraDos" class="form-control" name="contraDos" value="<?= (!empty($_GET["confirmarContraseña"])) ? $_GET["confirmarContraseña"] : "" ?>"  >
 
             </div>
 

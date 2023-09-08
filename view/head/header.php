@@ -32,9 +32,16 @@ require_once("C:/xampp/htdocs/login/view/head/head.php");
             <li class="nav-item nav-item2">
               <a class="nav-link nav-item2" href="#">Contacto</a>
             </li>
-            <li class="nav-item nav-item2">
-              <a class="nav-link" href="#">Tutorias</a>
-            </li>
+            <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tutorías
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="estudiante.php">Estudiante</a></li>
+            <li><a class="dropdown-item" href="profesor.php">Profesor</a></li>
+            <li><a class="dropdown-item" href="admin.php">Administrador</a></li>
+          </ul>
+        </li>
 
           </ul>
         </div>
@@ -45,21 +52,22 @@ require_once("C:/xampp/htdocs/login/view/head/head.php");
 
 
     <div class="fondo">
-<?php if(empty($_SESSION['usuario'])): ?>
-    
+
+   
 
 
-
-    
+    <?php if(empty($_SESSION['usuario'])): ?>
 
     <div class="position-relative">
           <img src="../../login/asset/img/fondo.jpg" class="img-fluid" alt="...">
 
       <div class="position-absolute subir start-0 text-center">
-          <h1>Regístrese para tutorías</h1>
+          <h1>UTU<span class="torias">TORÍAS</span></h1>
            <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi distinctio corrupti alias accusamus aliquid sint recusandae eligendi laboriosam? Vero porro nesciunt alias non quisquam quis, recusandae expedita in. Quam, quasi.
-       </p>
+            Agendate en la plataforma de la Escuela Técnica Superior de Florida. <br>Encuentra tutores capacitados para ayudarte en tus asignaturas y proyectos. <br>
+            Impulsa tu aprendizaje y alcanza el exito académico
+          </p>
+          
 
 
     <div class="botones">
@@ -74,7 +82,7 @@ require_once("C:/xampp/htdocs/login/view/head/head.php");
   </div>
 
   <?php else: ?>
-
-    <h1 class="text-center mt-4">Bienvenido Usuario <?= $_SESSION["usuario"] ?></h1>
+     <h1 class="text-center mt-4">Bienvenido Usuario <?= $_SESSION["usuario"] ?></h1>
     <a href="/login/view/home/logout.php" class="boton">Cerrar Session</a>
+
     <?php endif ?>

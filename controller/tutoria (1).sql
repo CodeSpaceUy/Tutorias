@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-09-2023 a las 15:47:14
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 20-08-2023 a las 23:37:07
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,11 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `alumnos_tutoria` (
   `id_alumno` varchar(9) NOT NULL,
-  `id_tutoria` int(11) NOT NULL,
-  `diaTutoria` date NOT NULL,
-  `observaciones` varchar(255) NOT NULL,
-  `horaTutoria` varchar(45) NOT NULL
+  `id_tutoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `alumnos_tutoria`
+--
+
+INSERT INTO `alumnos_tutoria` (`id_alumno`, `id_tutoria`) VALUES
+('52935928', 1);
 
 -- --------------------------------------------------------
 
@@ -89,6 +93,13 @@ CREATE TABLE `estudiante` (
   `id_est` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `estudiante`
+--
+
+INSERT INTO `estudiante` (`id_est`) VALUES
+('52935928');
+
 -- --------------------------------------------------------
 
 --
@@ -142,16 +153,15 @@ CREATE TABLE `tutoria` (
   `fecha_inicio` date NOT NULL,
   `fecha_fin` date NOT NULL,
   `hora` varchar(255) NOT NULL,
-  `comentarios` varchar(255) NOT NULL,
-  `activa` int(2) NOT NULL
+  `comentarios` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `tutoria`
 --
 
-INSERT INTO `tutoria` (`id`, `id_profe`, `nombre`, `curso`, `periodo`, `fecha_inicio`, `fecha_fin`, `hora`, `comentarios`, `activa`) VALUES
-(1, '22434446', 'Primer Tutoria', 1, 1, '2023-08-13', '2023-08-20', '9:55', 'No hay comentarios', 0);
+INSERT INTO `tutoria` (`id`, `id_profe`, `nombre`, `curso`, `periodo`, `fecha_inicio`, `fecha_fin`, `hora`, `comentarios`) VALUES
+(1, '22434446', 'Primer Tutoria', 1, 1, '2023-08-13', '2023-08-20', '9:55', 'No hay comentarios');
 
 -- --------------------------------------------------------
 
@@ -174,12 +184,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`ci`, `correo`, `name`, `surname`, `password`, `verificacion`, `id_cargo`) VALUES
-('12295568', 'esoa@gmail.com', 'JOsefina', 'Guerra', '888', '1', 2),
-('12346545', 'brignoni@gmail.com', 'Santiago', 'Brignoni', '123', '2', 4),
+('12295568', 'esoa@gmail.com', 'JOsefina', 'Guerra', '888', '2', 2),
 ('22334445', 'sadas@gmail.coom', 'Pepe', 'Gonzalez', '123', '2', 2),
 ('22434446', 'gkas@gmail.coom', 'Felipe', 'Guti', '555', '2', 2),
 ('26665554', 'oaosd@gmail.com', 'Maria', 'Nuñez', '444', '2', 2),
-('53124215', 'joakoprogaymer777@gmail.com', 'Joaquin', 'DePra', '555666', '1', 3),
+('52935928', 'exequielrodrigueztcm@gmail.com', 'Exequiel', 'Cabrera', 'eze123', '1', 3),
+('55542223', 'sadpe@gmail.com', 'Brinda', 'Loste', '234', '2', 3),
 ('99984445', 'oosp@gmail.com', 'Karina', 'Nas', '823', '2', 3);
 
 --
